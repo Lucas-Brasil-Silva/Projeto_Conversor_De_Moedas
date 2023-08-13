@@ -53,7 +53,7 @@ def main():
         elif event == 'finalizado':
             if not values['Moeda 2'] in ['2° Moeda',''] and not values['Moeda 1'] in ['1° Moeda','']:
                 window['Resultado'].update(
-                f'{values["Valor"].replace(",",".")} {primeira_moeda} corresponde a{linesep}{values["finalizado"]} {segunda_moeda}', text_color='white')
+                    f'{values["Valor"].replace(",",".") if not values["Valor"] in ["","0"] else 1} {primeira_moeda} corresponde a{linesep}{values["finalizado"]} {segunda_moeda}', text_color='white')
             else:
                 window['Resultado'].update(
                 f'1 Dólar americano corresponde a{linesep}{values["finalizado"]} Real brasileiro', text_color='white')
